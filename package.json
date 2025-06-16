@@ -1,0 +1,26 @@
+{
+  "name": "scrim-s06ivf6",
+  "description": "https://scrimba.com/learn-react-c0e/~0vs/s0vrdhupdc/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.27.3",
+    "@huggingface/inference": "2.8.1",
+    "dotenv": "^16.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "10.1.0",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*"
+  },
+  "version": "1.0.0",
+  "main": "ai.js",
+  "author": "",
+  "license": "ISC"
+}

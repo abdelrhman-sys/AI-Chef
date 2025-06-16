@@ -4,10 +4,8 @@ import ClaudeRecipe from "./components/ClaudeRecipe";
 import { getRecipeFromMistral } from "./ai";
 
 export default function Main() {
-    const [ingredients, setIngredients] = React.useState(
-        ["chicken", "all the main spices", "corn", "heavy cream", "pasta"]
-    )
-    const [recipe, setRecipe] = React.useState("")
+    const [ingredients, setIngredients] = React.useState([]);
+    const [recipe, setRecipe] = React.useState("");
 
     async function getRecipe() {
         const recipeMarkdown = await getRecipeFromMistral(ingredients);
@@ -22,9 +20,10 @@ export default function Main() {
     return (
         <main>
             <form action={addIngredient} className="add-ingredient-form">
+                <p className="ingredient-warn">"cannot be less than 4 ingredients"</p>
                 <input
                     type="text"
-                    placeholder="e.g. oregano"
+                    placeholder="e.g. oregano "
                     aria-label="Add ingredient"
                     name="ingredient"
                 />

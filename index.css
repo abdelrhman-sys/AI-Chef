@@ -47,6 +47,11 @@ main {
     max-width: 400px;
 }
 
+.ingredient-warn {
+    color: rgba(255, 0, 0, 0.511);
+    font-size: smaller;
+}
+
 .add-ingredient-form > button {
     font-family: Inter, sans-serif;
     border-radius: 6px;

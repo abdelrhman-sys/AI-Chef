@@ -2,14 +2,17 @@ import React from "react";
 import IngredientsList from "./components/IngredientsList";
 import AIRecipe from "./components/AIRecipe";
 import { getRecipeMarkdown } from "./ai";
+import Loading from "./components/Loading";
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState([]);
     const [recipe, setRecipe] = React.useState("");
+    const [loading, setLoading] = React.useState(false);
 
     async function getRecipe() {
         const recipeMarkdown = await getRecipeMarkdown(ingredients);
         setRecipe(recipeMarkdown);
+        setLoading(false);
     }
 
     function addIngredient(formData) {
@@ -20,6 +23,10 @@ export default function Main() {
     function resetIngredients() {
         setIngredients('');
         setRecipe('')
+    }
+
+    function showLoading() {
+        setLoading(true);
     }
 
     return (
@@ -42,9 +49,10 @@ export default function Main() {
                     getRecipe={getRecipe}
                     isRecipe={recipe}
                     resetIngredients={resetIngredients}
+                    showLoading={showLoading}
                 />
             }
-
+            <Loading loading={loading} />
             {recipe && <AIRecipe recipe={recipe} />}
         </main>
     )

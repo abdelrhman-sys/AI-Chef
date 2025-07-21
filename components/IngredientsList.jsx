@@ -12,7 +12,7 @@ export default function IngredientsList(props) {
                     <h3>Ready for a recipe?</h3>
                     <p>Generate a recipe from your list of ingredients.</p>
                 </div>
-                <button onClick={props.getRecipe} style={{backgroundColor: props.isRecipe&& "green"}}>{props.isRecipe? "Get a different recipe" : "Get a recipe"}</button>
+                <button onClick={()=>{props.showLoading(); props.getRecipe();}} style={{backgroundColor: props.isRecipe&& "green"}}>{props.isRecipe? "Get a different recipe" : "Get a recipe"}</button>
             </div>}
         </section>
     )

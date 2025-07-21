@@ -143,6 +143,26 @@ ul.ingredients-list > li {
     cursor: pointer;
 }
 
+#container {
+    display: flex;
+    justify-content: center;
+    margin:3px 0;
+    gap: 10px;
+}
+
+.box {
+    background-color: orange;
+    margin: 30px 0;
+    height: 30px;
+    width: 30px;
+    animation: loading 1s infinite;
+}
+@keyframes loading {
+    to{
+        rotate: 360deg;
+    }
+}
+
 .suggested-recipe-container {
     color: #475467;
     line-height: 28px;
